@@ -1,0 +1,23 @@
+{
+  "name": "readMeGenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemanou7/readMeGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemanou7/readMeGenerator/issues"
+  },
+  "homepage": "https://github.com/lemanou7/readMeGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
