@@ -1,11 +1,8 @@
 // Declaring the dependencies and variables
 const fs = require("fs");
-const util = require("util");
 const inquirer = require("inquirer");
 
-
-
-//Prompt the user questions to populate the README.md
+//This will Prompt a series of questions to build the README.md file
 
 inquirer.prompt([
     {
@@ -51,7 +48,7 @@ inquirer.prompt([
     },
     {
         type: "input",
-        name: "tests",
+        name: "test",
         message: "Is there any test?"
     },
     {
@@ -78,46 +75,46 @@ inquirer.prompt([
         
 const readmeTemplate = `
 
-#${title}
+# ${title}
 
-##Description
+## Description
 ${description}
 
-##Table of Contents
-*[Description](#description)
-*[Installation](#installation)
-*[Usage](#usage)
-*[Contribution](#contribution)
-*[Credit](#credit)
-*[License](#license)
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Credit](#credit)
+* [License](#license)
 
 
-#Installation
+# Installation
 ${installation}
-##Usage
+## Usage
 ${usage}
-##License
+## License
 ${license}
-##Contributing
+## Contributing
 ${contributing}
-##Test
+## Test
 ${test}
 
-#My Contact
-*Github: https://github.com/${username}
-*Email: ${email}`;
+# My Contact
+* Github: https://github.com/${username}
+* Email: ${email}`;
 
-generateReadme(title,readmeTemplate)
+writeToFile(readmeTemplate); 
 
 }
     
 );
 
-
-async function generateReadme(fileName,readmeTemplate){
-   
+//function to create the readme file
+function writeToFile(template){
+//    fileName = fileName.toLowerCase().split(' ').join('');
     // let file = `${fileName.toLowerCase().split(" ").join('').md}`;
-    fs.writeFile(`${fileName.toLowerCase().split(' ').join('').md}`, readmeTemplate, (err) =>{
+    fs.writeFile('./readme.md', template, (err) =>{
         if(err){
             console.log(err);
         }
@@ -126,6 +123,5 @@ async function generateReadme(fileName,readmeTemplate){
     
     
    
-
 }
 
